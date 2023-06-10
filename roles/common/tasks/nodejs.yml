@@ -1,0 +1,21 @@
+
+
+
+
+
+
+
+#echo -e "$color configuring node js $nocolor"
+#curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log_file}
+#
+#echo -e "$color installing nodejs$nocolor"
+#yum install nodejs -y &>>${log_file}
+#
+#app_presetup
+#
+#echo -e "$color installing dependencies $nocolor"
+#npm install &>>${log_file}
+#
+#
+#
+#systemd_setup
