@@ -1,4 +1,4 @@
-- name: install maven
+- name: install python
   ansible.builtin.yum:
     name:
       - python36
@@ -10,7 +10,7 @@
   ansible.builtin.import_tasks:
     file: app_presetup.yml
 
-- name: install application dependencies
+- name: install python dependencies
   ansible.builtin.shell: pip3.6 install -r requirements.txt
   args:
     chdir: /app
