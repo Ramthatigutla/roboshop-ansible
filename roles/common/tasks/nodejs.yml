@@ -10,10 +10,14 @@
   ansible.builtin.import_tasks:
     file: app_presetup.yml
 
+- name: installing nodejs dependencies
+  ansible.builtin.shell: npm install
+    args:
+    chdir: /app
+
+- name: systemd setup
+  ansible.builtin.import_tasks:
+    file: systemd_setup.yml
 
 
 
-#echo -e "$color installing dependencies $nocolor"
-#npm install &>>${log_file}
-
-#systemd_setup
