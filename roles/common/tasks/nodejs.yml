@@ -6,9 +6,12 @@
      name: nodejs
      state: installed
 
+- name: app prerequisites
+  ansible.builtin.import_tasks:
+    file: app_presetup.yml
 
 
-#app_presetup
+
 
 #echo -e "$color installing dependencies $nocolor"
 #npm install &>>${log_file}
