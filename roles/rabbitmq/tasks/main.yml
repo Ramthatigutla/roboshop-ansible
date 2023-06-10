@@ -5,18 +5,18 @@
   ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
 
 
-- name: installing rabbitmq server
+- name: INstall RabbitMQ Server
   ansible.builtin.yum:
     name: rabbitmq-server
     state: installed
 
-- name: starting the server
+- name: Start RabbitMQ Server
   ansible.builtin.systemd:
     name: rabbitmq-server
     state: restarted
     enabled: yes
 
-- name: add application user
+- name: Add Application User
   community.rabbitmq.rabbitmq_user:
     user: roboshop
     password: roboshop123
@@ -25,8 +25,3 @@
     read_priv: .*
     write_priv: .*
     state: present
-
-
-#echo -e "\e[31m adding user and password \e[0m"
-#rabbitmqctl add_user roboshop $1  &>>/tmp/roboshop.log
-#rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"  &>>/tmp/roboshop.log
