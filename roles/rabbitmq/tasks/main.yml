@@ -5,9 +5,9 @@
   ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
 
 
-- name: installing rabbitMQ server
+- name: installing rabbitmq server
   ansible.builtin.yum:
-    name: rabbitMQ-server
+    name: rabbitmq-server
     state: installed
 
 - name: starting the server
